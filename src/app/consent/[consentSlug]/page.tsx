@@ -1,4 +1,4 @@
-import Consent from './consent';
+import Consent from "./consent";
 
 type ConsentRedirectParams = {
   consentSlug: string;
@@ -13,10 +13,9 @@ type ConsentRedirectProps = {
   searchParams: Promise<ConsentRedirectSearchParams>;
 };
 
-export default async function Home(props: ConsentRedirectProps) {
+export default async function ConsentPage(props: ConsentRedirectProps) {
   const { consentSlug } = await props.params;
   const { userId } = await props.searchParams;
-
   return (
     <Consent userId={userId} consentSlug={consentSlug}/>
   )
